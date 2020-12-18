@@ -31,6 +31,12 @@ window.shared_data = {
   router,
   movies: [
     {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space'},
+    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space'},
+    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space'},
+    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space'},
+    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space'},
+    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space'},
+    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space'},
     {title: 'Nemo', date: '2003', director: 'Andrew Stanton', topic: 'Movie about fishs'},
     {title: 'Cars', date: '2006', director: 'John Lasseter', topic: 'Movie about cars'},
   ],

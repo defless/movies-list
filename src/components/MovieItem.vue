@@ -1,12 +1,11 @@
 <template>
-  <div>
+  <b-card
+    v-on:click="shared_data.router.push(`/${id}`)"
+    v-bind:style="card"
+    class="d-flex flex-column"
+  >
     <h3>{{ movie.title }}</h3>
-    <p>{{ movie.date }}</p>
-    <p>{{ movie.director }}</p>
-    <p>{{ movie.topic }}</p>
-    <button v-on:click="deleteM">Delete</button>
-    <button v-on:click="editM(id)" >Edit</button>
-  </div>
+  </b-card>
 </template>
 
 <script>
@@ -24,6 +23,9 @@ export default {
   },
   data: function() {
   return {
+    card: {
+      height: '300px',
+    },
     shared_data: window.shared_data,
     };
   },

@@ -1,16 +1,12 @@
 <template>
-  <div id="app">
-    <SearchMovie v-on:search="searchResults(info)"/>
-    <div>
-      <h1>{{title}}</h1>
-      <ul>
-        <li v-for="(movie,i) in shared_data.movies" :key="movie.title" v-bind:title="movie.title">
-          <div>
-            <MovieItem v-bind:movie="movie" v-bind:id="i" v-on:delete="deleteMovie(i)" ></MovieItem>
-          </div>
-        </li>
-      </ul>
-      <h4>Number of movies: {{ shared_data.movies.length }}</h4>
+  <div class="d-flex flex-row justify-content-around flex-wrap">
+    <div
+      v-for="(movie,i) in shared_data.movies"
+      :key="i"
+      v-bind:title="movie.title"
+      class="col-md-3 mb-5"
+    >
+        <MovieItem v-bind:movie="movie" v-bind:id="i" v-on:delete="deleteMovie(i)" ></MovieItem>
     </div>
   </div>
 </template>
@@ -18,17 +14,14 @@
 <script>
 
   import MovieItem from './MovieItem.vue';
-  import SearchMovie from './SearchMovie.vue';
 
   export default {
     components: {
       MovieItem,
-      SearchMovie,
     },
 
     data: function() {
       return {
-          title: 'Movies list',
           newMovie: {title:'', year: null, director: '', topic: ''},
           search: { title:'', date: '', director: ''},
           shared_data: window.shared_data,
@@ -55,7 +48,7 @@
         },
       },
       computed: {
-        
+
       }
   }
 </script>

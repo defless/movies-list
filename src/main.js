@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 
 import Home from './components/Home'
 import Edit from './components/Edit'
+import AddMovie from './components/AddMovie'
 
 Vue.use(VueRouter);
 
@@ -11,7 +12,8 @@ Vue.config.productionTip = false
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/edit/:id', component: Edit }
+  { path: '/edit/:id', component: Edit },
+  { path: '/new', component: AddMovie }
 ]
 
 const router = new VueRouter({

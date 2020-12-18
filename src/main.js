@@ -1,17 +1,24 @@
-import Vue from 'vue'
-import App from './App.vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import { BootstrapVue } from 'bootstrap-vue';
+import VueRouter from 'vue-router';
 
-import Home from './components/Home'
-import Edit from './components/Edit'
-import AddMovie from './components/AddMovie'
+import App from './App.vue';
+import Home from './components/Home';
+import Edit from './components/Edit';
+import Movie from './components/Movie';
+import AddMovie from './components/AddMovie';
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(VueRouter);
+Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false
 
 const routes = [
   { path: '/', component: Home },
+  { path: '/:id', component: Movie },
   { path: '/edit/:id', component: Edit },
   { path: '/new', component: AddMovie }
 ]

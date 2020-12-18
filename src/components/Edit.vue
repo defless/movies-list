@@ -19,6 +19,7 @@
 <script>
 
 export default {
+  name: 'EditMovie',
   data: function() {
   return {
     movie:{},
@@ -31,6 +32,5 @@ export default {
       this.$emit('edit')
     },
   }
-
 }
 </script>

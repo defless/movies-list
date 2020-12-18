@@ -18,6 +18,7 @@
 </template>
 <script>
   export default {
+    name: 'AddMovie',
     data: function() {
     return {
       newMovie:{},

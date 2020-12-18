@@ -20,7 +20,7 @@ export default {
   name: 'MovieItem',
   props: {
     movie: Object,
-    id: Number
+    id: Number,
   },
   data: function() {
   return {

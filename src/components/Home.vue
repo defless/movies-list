@@ -1,20 +1,7 @@
 <template>
   <div id="app">
+    <SearchMovie v-on:search="searchResults(info)"/>
     <div>
-      <div>
-        <h2> Search for a movie</h2>
-        <input placeholder="Movie title" v-model="search.title" />
-        <input placeholder="Movie date" v-model="search.date" />
-        <input placeholder="Movie director" v-model="search.director" />
-        <ul>
-          <li v-for="movie in searchResults" :key="movie.title" v-bind:title="movie.title">
-            <h3>{{ movie.title }}</h3>
-            <p>{{ movie.date }}</p>
-            <p>{{ movie.director }}</p>
-            <p>{{ movie.topic }}</p>
-          </li>
-          </ul>
-      </div>
       <h1>{{title}}</h1>
       <ul>
         <li v-for="(movie,i) in shared_data.movies" :key="movie.title" v-bind:title="movie.title">
@@ -25,34 +12,18 @@
       </ul>
       <h4>Number of movies: {{ shared_data.movies.length }}</h4>
     </div>
-    <!-- <div id="newMovie">
-      <h2>Add a movie</h2>
-      <label>Title
-        <input v-model="newMovie.title" />
-      </label>
-      <label>Date
-        <input v-model="newMovie.date" />
-      </label>
-      <label>Director
-        <input v-model="newMovie.director" />
-      </label>
-      <label>Synopsis
-        <textarea v-model="newMovie.topic"></textarea>
-      </label>
-      <button v-on:click="addMovie(newMovie)">Add</button>
-      <p>First letter: {{ firstLetter }}</p>
-    </div> -->
   </div>
 </template>
 
 <script>
 
-  import MovieItem from './MovieItem.vue'
-  //import Edit from './components/Edit.vue'
+  import MovieItem from './MovieItem.vue';
+  import SearchMovie from './SearchMovie.vue';
 
   export default {
     components: {
       MovieItem,
+      SearchMovie,
     },
 
     data: function() {
@@ -84,38 +55,7 @@
         },
       },
       computed: {
-        firstLetter(){
-          return this.newMovie.title.charAt(0);
-        },
-        getResultsByTitle(){
-          if (this.search.title) {
-            return this.shared_data.movies.filter(movie => movie.title===this.search.title);
-          } else {
-            return this.shared_data.movies;
-          }
-
-        },
-        getResultsByDate(){
-          if (this.search.date) {
-            return this.getResultsByTitle.filter(movie => movie.date=== this.search.date);
-          } else {
-            return this.getResultsByTitle;
-          }
-        },
-        getResultsByDirector(){
-          if (this.search.director) {
-            return this.getResultsByDate.filter(movie => movie.director===this.search.director );
-          } else {
-            return this.getResultsByDate;
-          }
-        },
-        searchResults(){
-          if (this.search.title === '' && this.search.date === '' && this.search.director === '') {
-            return {};
-          } else {
-            return this.getResultsByDirector;
-          }
-        }
+        
       }
   }
 </script>

@@ -6,7 +6,7 @@
       v-bind:title="movie.title"
       class="col-md-3 mb-5"
     >
-        <MovieItem v-bind:movie="movie" v-bind:id="i" v-on:delete="deleteMovie(i)" ></MovieItem>
+        <MovieItem v-bind:movie="movie" v-bind:id="i" ></MovieItem>
     </div>
   </div>
 </template>

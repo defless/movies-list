@@ -18,8 +18,8 @@ Vue.config.productionTip = false
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/:id', component: Movie },
-  { path: '/edit/:id', component: Edit },
+  { path: '/movie/:id', component: Movie },
+  { path: '/movie/:id/edit', component: Edit },
   { path: '/new', component: AddMovie }
 ]
 
@@ -30,13 +30,7 @@ const router = new VueRouter({
 window.shared_data = {
   router,
   movies: [
-    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space'},
-    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space'},
-    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space'},
-    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space'},
-    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space'},
-    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space'},
-    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space'},
+    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space', poster: 'https://fr.web.img6.acsta.net/pictures/14/09/24/12/08/158828.jpg'},
     {title: 'Nemo', date: '2003', director: 'Andrew Stanton', topic: 'Movie about fishs'},
     {title: 'Cars', date: '2006', director: 'John Lasseter', topic: 'Movie about cars'},
   ],

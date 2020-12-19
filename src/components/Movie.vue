@@ -1,6 +1,5 @@
 <template>
   <div>
-    
     <h1>{{shared_data.movies[$route.params.id].title}}</h1>
     <p>{{ shared_data.movies[$route.params.id].date }}</p>
     <p>{{ shared_data.movies[$route.params.id].director }}</p>
@@ -20,6 +19,13 @@ export default {
     };
   },
   methods: {
+    deleteM: function(){
+      this.$emit('delete')
+    },
+    editM: function(id){
+      this.shared_data.router.push(`/movie/${id}/edit`);
+      this.$emit('edit')
+    },
   }
 }
 </script>

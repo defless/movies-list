@@ -4,12 +4,7 @@ const movieSchema = new mongoose.Schema({
   title: { type: String, required: true, unique: true },
   date: { type: Date, required: true },
   country: { type: String, required: true },
-  director: {
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
-    country: { type: String, required: true },
-    birthday: { type: Date, required: true },
-  },
+  director: { type: mongoose.ObjectId, required: false},
   score: { type: Number, required: true },
   poster: { type: String, required: true },
 });

@@ -1,14 +1,10 @@
 const Movie = require('../models/Movie');
 
-exports.createReport = (req, res) => {
-  const report = new Report({
-    title: req.body.title,
-    description: req.body.description,
-    latitude: req.body.latitude,
-    longitude: req.body.longitude,
-    photo: req.body.photo,
+exports.createMovie = (req, res) => {
+  const movie = new Movie({
+
   });
-  report.save().then(
+  movie.save().then(
     () => {
       res.status(201).json({
         message: 'Post saved successfully!',
@@ -23,12 +19,12 @@ exports.createReport = (req, res) => {
   );
 };
 
-exports.getaReport = (req, res) => {
-  Report.findOne({
+exports.getMovie = (req, res) => {
+  Movie.findOne({
     _id: req.params.id,
   }).then(
-    (report) => {
-      res.status(200).json(report);
+    (movie) => {
+      res.status(200).json(movie);
     },
   ).catch(
     (error) => {
@@ -39,8 +35,8 @@ exports.getaReport = (req, res) => {
   );
 };
 
-exports.editReport = (req, res) => {
-  const report = new Report({
+exports.editMovie = (req, res) => {
+  const movie = new Movie({
     _id: req.params.id,
     title: req.body.title,
     description: req.body.description,
@@ -48,7 +44,7 @@ exports.editReport = (req, res) => {
     longitude: req.body.longitude,
     photo: req.body.photo,
   });
-  Report.updateOne({ _id: req.params.id }, report).then(
+  Movie.updateOne({ _id: req.params.id }, movie).then(
     () => {
       res.status(201).json({
         message: 'Report updated successfully!',
@@ -63,8 +59,8 @@ exports.editReport = (req, res) => {
   );
 };
 
-exports.deleteReport = (req, res) => {
-  Report.deleteOne({ _id: req.params.id }).then(
+exports.deleteMovie = (req, res) => {
+  Movie.deleteOne({ _id: req.params.id }).then(
     () => {
       res.status(200).json({
         message: 'Deleted!',
@@ -79,10 +75,10 @@ exports.deleteReport = (req, res) => {
   );
 };
 
-exports.getAllReports = (req, res) => {
-  Report.find().then(
-    (reports) => {
-      res.status(200).json(reports);
+exports.getMovies = (req, res) => {
+  Movie.find().then(
+    (movies) => {
+      res.status(200).json(movies);
     },
   ).catch(
     (error) => {

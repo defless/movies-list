@@ -4,9 +4,11 @@
       v-for="(movie,i) in shared_data.movies"
       :key="i"
       v-bind:title="movie.title"
-      class="col-md-3 mb-5"
+      class="col-md-3 mb-5 movieCard"
+      v-on:click="shared_data.router.push(`/movie/${i}`)"
     >
-        <MovieItem v-bind:movie="movie" v-bind:id="i" ></MovieItem>
+      <div class="gradient"></div>
+      <MovieItem v-bind:movie="movie" v-bind:id="i" ></MovieItem>
     </div>
   </div>
 </template>

@@ -1,7 +1,6 @@
 <template>
   <b-card
-    v-on:click="shared_data.router.push(`/movie/${id}`)"
-    class="d-flex flex-row align-items-end movieCard"
+    class="d-flex flex-row align-items-end cardBody"
     v-bind:style="{ backgroundImage: 'url(' + movie.poster + ')' }"
   >
     <div class="d-flex">

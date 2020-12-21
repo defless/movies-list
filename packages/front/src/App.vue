@@ -2,7 +2,7 @@
 @import './assets/css/main.css';
 </style>
 <template>
-  <div>
+  <div class="midnight">
     <b-nav class="mb-5 d-flex flex-row justify-content-between p-2">
       <div class="d-flex flex-row">
         <b-nav-item v-on:click="shared_data.router.push('/')">List</b-nav-item>

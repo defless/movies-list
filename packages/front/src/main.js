@@ -29,12 +29,7 @@ const router = new VueRouter({
 
 window.shared_data = {
   router,
-  movies: [
-    {title: 'Interstellar', date: '2014', director: 'Christopher Nolan', topic: 'Movie about space', poster: 'https://fr.web.img6.acsta.net/pictures/14/09/24/12/08/158828.jpg'},
-    {title: 'Nemo', date: '2003', director: 'Andrew Stanton', topic: 'Movie about fishs', poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRikhGYrAIHEwUyX6HgOGr5n8XOPZylIhMRLxbaG3RiY62c4huF'},
-    {title: 'Cars', date: '2006', director: 'John Lasseter', topic: 'Movie about cars', poster: 'https://i.pinimg.com/originals/e5/1a/57/e51a576e5458491dbed739fb717dafd5.jpg'},
-    {title: 'Cars', date: '2006', director: 'John Lasseter', topic: 'Movie about cars', poster: 'https://i.pinimg.com/originals/e5/1a/57/e51a576e5458491dbed739fb717dafd5.jpg'},
-  ],
+  movies: [],
 }
 
 new Vue({

@@ -5,18 +5,26 @@
       <input v-model="newMovie.title" />
     </label>
     <label>Date
-      <input v-model="newMovie.date" />
+      <input v-model="newMovie.year" />
     </label>
-    <label>Director
+    <!-- <label>Director
       <input v-model="newMovie.director" />
-    </label>
+    </label> -->
     <label>Synopsis
-      <textarea v-model="newMovie.topic"></textarea>
+      <textarea v-model="newMovie.description"></textarea>
     </label>
-    <button v-on:click="addMovie(newMovie)">Add</button>
+    <label>Score
+      <input v-model="newMovie.score" />
+    </label>
+    <label>Picture
+      <input v-model="newMovie.poster" />
+    </label>
+    <button v-on:click="addMovie()">Add</button>
   </div>
 </template>
 <script>
+
+  import { _addMovie } from '../services/api';
   export default {
     name: 'AddMovie',
     data: function() {
@@ -26,9 +34,11 @@
       };
     },
     methods: {
-      addMovie: function(){
-        this.shared_data.movies.push(this.newMovie);
-        this.shared_data.router.push('/');
+      addMovie: async function(){
+        const post = await _addMovie(this.newMovie);
+        if (post.status === 201) {
+          this.shared_data.router.push('/');
+        }
       },
     }
   }

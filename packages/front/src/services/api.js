@@ -1,0 +1,35 @@
+const apiUrl = 'http://localhost:3000';
+
+export const _addMovie = async movie => {
+  try {
+    const result = await fetch(`${apiUrl}/movie/`, {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify ({
+        title: movie.title,
+        year: movie.year,
+        description: movie.description,
+        score: movie.score,
+        poster: movie.poster,
+      })
+    })
+    return result;
+  } catch (e) {
+    console.warn(e);
+  }
+};
+
+export const _getMovies = async () => {
+  try {
+    const result = await fetch(`${apiUrl}/movie/`, {
+      method: "GET",
+    })
+    return result.json();
+  } catch (e) {
+    console.warn(e);
+  }
+};
+
+export const _editMovie = async () => {
+
+};

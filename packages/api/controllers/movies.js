@@ -1,8 +1,13 @@
 const Movie = require('../models/Movie');
 
 exports.createMovie = (req, res) => {
+  console.log(req.body);
   const movie = new Movie({
-
+    title: req.body.title,
+    year: req.body.year,
+    description: req.body.description,
+    score: req.body.score,
+    poster: req.body.poster,
   });
   movie.save().then(
     () => {

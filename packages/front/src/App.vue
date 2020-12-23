@@ -13,24 +13,34 @@
         <SearchMovie v-on:search="searchResults(info)"/>
       </b-nav-form>
     </b-nav>
-    <router-view  class="container"></router-view>
+    <router-view :key="$route.path" class="container"></router-view>
   </div>
 </template>
 
 <script>
-import SearchMovie from './components/SearchMovie.vue';
 
-export default {
-  name: 'App',
-  components: {
-    SearchMovie,
-  },
-  data: function() {
-  return {
-    shared_data: window.shared_data,
-    };
-  },
-  computed: {
-  },
+  import SearchMovie from './components/SearchMovie.vue';
+  import { _getMovies}  from './services/api';
+
+  export default {
+    name: 'App',
+    components: {
+      SearchMovie,
+    },
+    data: function() {
+    return {
+      shared_data: window.shared_data,
+      };
+    },
+    methods: {
+      init: async function(){
+        const movies = await _getMovies();
+        window.shared_data.movies = movies;
+        console.log(this.shared_data.movies)
+      },
+    },
+    mounted(){
+      this.init();
+    }
   }
 </script>

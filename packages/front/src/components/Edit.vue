@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     editM: function(){
-      this.shared_data.router.push('/')
+      this.shared_data.router.push('/').catch(()=>{});
       this.$emit('edit')
     },
   }

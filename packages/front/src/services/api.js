@@ -33,3 +33,14 @@ export const _getMovies = async () => {
 export const _editMovie = async () => {
 
 };
+
+export const _deleteMovie = async id => {
+  try {
+    const result = await fetch(`${apiUrl}/movie/${id}` , {
+      method: "DELETE",
+    })
+    return result;
+  } catch (e) {
+    console.warn(e);
+  }
+};

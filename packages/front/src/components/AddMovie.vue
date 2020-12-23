@@ -37,7 +37,7 @@
       addMovie: async function(){
         const post = await _addMovie(this.newMovie);
         if (post.status === 201) {
-          this.shared_data.router.push('/');
+          this.shared_data.router.push('/').catch(()=>{});
         }
       },
     }

@@ -7,7 +7,6 @@ import Home from './components/Home';
 import Edit from './components/Edit';
 import Movie from './components/Movie';
 import AddMovie from './components/AddMovie';
-import RandomMovie from './components/RandomMovie';
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -22,7 +21,6 @@ const routes = [
   { path: '/movie/:id', component: Movie },
   { path: '/movie/:id/edit', component: Edit },
   { path: '/new', component: AddMovie },
-  { path: '/random', component: RandomMovie }
 ]
 
 const router = new VueRouter({

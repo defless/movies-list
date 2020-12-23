@@ -6,26 +6,31 @@
     <p>{{ shared_data.movies[$route.params.id].topic }}</p>
 
     <b-button variant="info" v-on:click="editM(id)" >Edit</b-button>
-    <b-button variant="danger" v-on:click="deleteM">Delete</b-button>
+    <b-button variant="danger" v-on:click="deleteMovie">Delete</b-button>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'Movie',
-  data: function() {
-  return {
-    shared_data: window.shared_data,
-    };
-  },
-  methods: {
-    deleteM: function(){
-      this.$emit('delete')
+  import { _deleteMovie } from '../services/api';
+
+  export default {
+    name: 'Movie',
+    data: function() {
+    return {
+      shared_data: window.shared_data,
+      };
     },
-    editM: function(id){
-      this.shared_data.router.push(`/movie/${id}/edit`);
-      this.$emit('edit')
-    },
+    methods: {
+      deleteMovie: async function(){
+        const result = await _deleteMovie(this.shared_data.movies[this.$route.params.id]._id);
+        if (result.status === 200) {
+          this.shared_data.router.push('/').catch(()=>{});
+        }
+      },
+      editM: function(id){
+        this.shared_data.router.push(`/movie/${id}/edit`);
+        this.$emit('edit')
+      },
+    }
   }
-}
 </script>

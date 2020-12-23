@@ -5,7 +5,7 @@
     <p>{{ shared_data.movies[$route.params.id].director }}</p>
     <p>{{ shared_data.movies[$route.params.id].topic }}</p>
 
-    <b-button variant="info" v-on:click="editM(id)" >Edit</b-button>
+    <b-button variant="info" v-on:click="editM($route.params.id)" >Edit</b-button>
     <b-button variant="danger" v-on:click="deleteMovie">Delete</b-button>
   </div>
 </template>

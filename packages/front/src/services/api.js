@@ -30,8 +30,23 @@ export const _getMovies = async () => {
   }
 };
 
-export const _editMovie = async () => {
-
+export const _editMovie = async movie => {
+  try {
+    const result = await fetch(`${apiUrl}/movie/${movie._id}`, {
+      method: "PUT",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify ({
+        title: movie.title,
+        year: movie.year,
+        description: movie.description,
+        score: movie.score,
+        poster: movie.poster,
+      })
+    })
+    return result;
+  } catch (e) {
+    console.warn(e);
+  }
 };
 
 export const _deleteMovie = async id => {

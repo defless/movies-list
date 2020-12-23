@@ -40,6 +40,7 @@
     },
     mounted(){
       this.init();
+      console.log(window.shared_data.movies);
     },
     updated(){
       this.init();

@@ -44,10 +44,10 @@ exports.editMovie = (req, res) => {
   const movie = new Movie({
     _id: req.params.id,
     title: req.body.title,
+    year: req.body.year,
     description: req.body.description,
-    latitude: req.body.latitude,
-    longitude: req.body.longitude,
-    photo: req.body.photo,
+    score: req.body.score,
+    poster: req.body.poster,
   });
   Movie.updateOne({ _id: req.params.id }, movie).then(
     () => {

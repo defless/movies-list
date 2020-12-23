@@ -13,7 +13,7 @@
       <input v-model="movie.score"/>
     </label>
     <label>Poster:
-      <input v-model="movie.score"/>
+      <input v-model="movie.poster"/>
     </label>
     <button v-on:click="editM">Edit</button>
   </div>
@@ -37,7 +37,7 @@
     methods: {
       editM: function(){
         _editMovie(this.movie);
-        this.shared_data.router.push('/').catch(()=>{});
+        //this.shared_data.router.push('/').catch(()=>{});
       },
     }
   }

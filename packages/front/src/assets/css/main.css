@@ -54,3 +54,26 @@ html a{
   border: none !important;
   color: white !important;
 }
+
+.poster {
+  width:100%;
+}
+
+.score {
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:40px;
+  height: 40px;
+}
+
+.score p {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+}
+
+.movieParameters {
+  line-height: 5px;
+}

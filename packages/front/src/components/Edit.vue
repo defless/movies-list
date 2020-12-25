@@ -37,7 +37,7 @@
     methods: {
       editM: function(){
         _editMovie(this.movie);
-        //this.shared_data.router.push('/').catch(()=>{});
+        this.shared_data.router.push('/').catch(()=>{});
       },
     }
   }

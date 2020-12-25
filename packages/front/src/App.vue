@@ -3,7 +3,7 @@
 </style>
 <template>
   <div class="midnight">
-    <b-nav class="mb-5 d-flex flex-row justify-content-between p-2">
+    <b-nav class="mb-5 d-flex flex-row justify-content-between p-2 navbar">
       <div class="d-flex flex-row">
         <b-nav-item v-on:click="shared_data.router.push('/').catch(()=>{})">List</b-nav-item>
         <b-nav-item v-on:click="shared_data.router.push('/new').catch(()=>{})">Add a movie</b-nav-item>
@@ -13,7 +13,7 @@
         <SearchMovie v-on:search="searchResults(info)"/>
       </b-nav-form>
     </b-nav>
-    <router-view :key="$route.path" class="container"></router-view>
+    <router-view :key="$route.path" class="container-fluid"></router-view>
   </div>
 </template>
 

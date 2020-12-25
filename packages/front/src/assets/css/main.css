@@ -1,24 +1,56 @@
 html {
+  background-color: #18162A;
+}
 
+body {
+  color: white !important;
 }
 
 .midnight {
+  background-color: #18162A;
 }
+
+.navbar {
+  background-color: #262642;
+}
+
+.slider {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+html a{
+  color: white;
+}
+
 .gradient {
   height:100%;
   width: calc(100% - 30px);
-  background: linear-gradient(rgba(255,0,0,0), rgba(0,0,0,1));
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8785889355742297) 33%, rgba(255,255,255,0) 100%);
   position:absolute;
   z-index: 10;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .cardBody {
-  height: 450px;
+  border-radius: 20px !important;
+  height: 350px;
   background-size: cover;
   background-position: center;
   color: white;
+  cursor: pointer;
 }
 
 .cardBody h3 {
   z-index:100;
+  font-size: 20px;
+}
+
+.searchBar {
+  width:250px !important;
+  background-color: #0B071F !important;
+  border: none !important;
+  color: white !important;
 }

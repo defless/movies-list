@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-form-input placeholder="Title, date, director" v-model="info" />
+    <b-form-input class="searchBar" placeholder="Title, date, director" v-model="info" />
     <ul>
       <li v-for="movie in searchResults" :key="movie.title" v-bind:title="movie.title">
         <h3>{{ movie.title }}</h3>

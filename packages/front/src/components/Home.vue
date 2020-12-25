@@ -4,7 +4,7 @@
       v-for="(movie,i) in shared_data.movies"
       :key="i"
       v-bind:title="movie.title"
-      class="col-md-3 mb-5 movieCard"
+      class="col-md-2 mb-5 movieCard"
       v-on:click="shared_data.router.push(`/movie/${i}`).catch(()=>{})"
     >
       <div class="gradient"></div>

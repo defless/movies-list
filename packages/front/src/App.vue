@@ -35,7 +35,10 @@
     methods: {
       init: async function(){
         const movies = await _getMovies();
+        console.log(movies);
+        movies.forEach(movie => movie.title = movie.title.charAt(0).toUpperCase() + movie.title.slice(1));
         window.shared_data.movies = movies;
+
       },
     },
     mounted(){

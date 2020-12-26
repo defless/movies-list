@@ -5,7 +5,7 @@
   <div class="midnight">
     <b-nav class="mb-5 d-flex flex-row justify-content-between p-2 navbar">
       <div class="d-flex flex-row">
-        <b-nav-item v-on:click="shared_data.router.push('/').catch(()=>{})">List</b-nav-item>
+        <b-nav-item v-on:click="shared_data.router.push('/').catch(()=>{})">Movies</b-nav-item>
         <b-nav-item v-on:click="shared_data.router.push('/new').catch(()=>{})">Add a movie</b-nav-item>
         <b-nav-item v-on:click="shared_data.router.push(`/movie/${Math.floor(Math.random() * Math.floor(shared_data.movies.length))}`).catch(()=>{})">Random Movie</b-nav-item>
       </div>

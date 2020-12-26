@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-row justify-content-around flex-wrap">
+  <div class="d-flex flex-row justify-content-left flex-wrap">
     <div
       v-for="(movie,i) in shared_data.movies"
       :key="i"

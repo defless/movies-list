@@ -6,6 +6,7 @@ exports.createMovie = (req, res) => {
     title: req.body.title,
     year: req.body.year,
     description: req.body.description,
+    director: req.body.director,
     score: req.body.score,
     poster: req.body.poster,
   });
@@ -46,13 +47,14 @@ exports.editMovie = (req, res) => {
     title: req.body.title,
     year: req.body.year,
     description: req.body.description,
+    director: req.body.director,
     score: req.body.score,
     poster: req.body.poster,
   });
   Movie.updateOne({ _id: req.params.id }, movie).then(
     () => {
       res.status(201).json({
-        message: 'Report updated successfully!',
+        message: 'Movie updated successfully!',
       });
     },
   ).catch(

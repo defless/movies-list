@@ -2,10 +2,13 @@ const express = require('express');
 var cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+require('dotenv').config()
 
 const moviesRoute = require('./routes/movies')
 
-mongoose.connect('mongodb://localhost:27017/movies-list',
+//mongodb+srv://root:<password>@cluster0.iuprj.mongodb.net/<dbname>?retryWrites=true&w=majority
+// mongoose.connect('mongodb://localhost:27017/movies-list',
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.iuprj.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
   .then(() => console.warn('Connexion à MongoDB réussie !'))
   .catch(() => console.warn('Connexion à MongoDB échouée !'));
